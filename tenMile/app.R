@@ -9,6 +9,8 @@
 
 library(shiny)
 
+load("tenMileRace.rda")
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
@@ -22,9 +24,9 @@ ui <- fluidPage(
                         "Number of bins:",
                         min = 1,
                         max = 50,
-                        value = 30)
+                        value = 30),
             sliderInput(
-              "limits" , "Specify Range"
+              "limits" , "Specify Range" ,
               min = 0, max = 11000,
               value = range(TenMileRace$net)
             )
